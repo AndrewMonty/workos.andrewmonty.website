@@ -8,7 +8,7 @@ export function NavMain({ items = [] }: { items: NavItem[] }) {
     const { urlIsActive } = useActiveUrl();
 
     return (
-        <SidebarGroup className="px-2 py-0">
+        <SidebarGroup>
             <SidebarMenu>
                 {items.map((item) => (
                     <SidebarMenuItem key={item.title}>
