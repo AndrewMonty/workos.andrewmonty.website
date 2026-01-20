@@ -1,10 +1,11 @@
 import { Link } from '@inertiajs/react';
-import { LayoutGrid, FileText } from 'lucide-react';
+import { LayoutGrid, FileText, Settings } from 'lucide-react';
 
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarTrigger } from '@/components/ui/sidebar';
 import { dashboard, resume } from '@/routes';
+import { edit } from '@/routes/profile';
 import { type NavItem } from '@/types';
 
 import AppLogo from './app-logo';
@@ -22,7 +23,13 @@ const mainNavItems: NavItem[] = [
     },
 ];
 
-const footerNavItems: NavItem[] = [];
+const footerNavItems: NavItem[] = [
+    {
+        title: 'Settings',
+        href: edit(),
+        icon: Settings,
+    }
+];
 
 export function AppSidebar() {
     return (
@@ -41,7 +48,7 @@ export function AppSidebar() {
             </SidebarContent>
 
             <SidebarFooter>
-                <NavFooter items={footerNavItems} className="mt-auto" />
+                <NavFooter items={footerNavItems} className="mt-auto border-t border-border" />
             </SidebarFooter>
         </Sidebar>
     );
