@@ -1,5 +1,6 @@
 import { Head, Link, usePage } from '@inertiajs/react';
 
+import AppLogo from '@/components/app-logo';
 import { Button } from '@/components/ui/button';
 import { dashboard, login } from '@/routes';
 import { type SharedData } from '@/types';
@@ -13,7 +14,8 @@ export default function Welcome() {
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
-            <div className="flex min-h-screen flex-col items-center justify-center bg-background">
+            <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-background">
+                <AppLogo />
                 {auth.user ? (
                     <Button asChild variant="outline" size="lg">
                         <Link href={dashboard()}>Dashboard</Link>
