@@ -17,7 +17,7 @@ export default function Resume() {
             <Head title="Resume" />
             <div className="p-6 mx-auto prose prose-zinc dark:prose-invert">
                 <h3 className="sticky top-0 mb-0 bg-background py-2.5 font-mono text-base">
-                    2026 <span className="text-muted-foreground">=&gt;</span> WorkOS Maybe?
+                    2026 <span className="text-muted-foreground">=&gt;</span> ...WorkOS?
                 </h3>
 
                 <p>

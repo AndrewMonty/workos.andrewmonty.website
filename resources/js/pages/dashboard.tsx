@@ -1,9 +1,9 @@
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ReactionsCard from '@/components/reactions-card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import AppLayout from '@/layouts/app-layout';
-import { dashboard } from '@/routes';
+import { dashboard, resume } from '@/routes';
 import { type BreadcrumbItem } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -16,7 +16,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 export default function Dashboard({
     totalPageViews,
     uniqueVisitors,
-    reactionCounts
+    reactionCounts,
 }: {
     totalPageViews: number;
     uniqueVisitors: number;
@@ -26,7 +26,22 @@ export default function Dashboard({
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
             <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-6">
-                <h1 className="text-2xl leading-loose font-medium">Thanks for taking the time to review my application</h1>
+                 <section className="prose proze-zinc dark:prose-invert">
+                <h1>Welcome</h1>
+                    <p>
+                        If I'm going to apply to WorkOS, I should at least try using it first! This site was built from the Laravel React starter kit, with WorkOS authentication.
+                    </p>
+                    <p>
+                        View <a href="https://github.com/AndrewMonty/workos.andrewmonty.website">the source</a> for this site.
+                    </p>
+                    <p>
+                        Check out my <Link href={resume().url} prefetch>resume</Link>.
+                    </p>
+                    <p>
+                        Back to <a href="https://andrewmonty.website">my public site</a>.
+                    </p>
+                </section>
+
                 <div className="grid auto-rows-min gap-4 md:grid-cols-3">
                     <Card className="aspect-video">
                         <CardHeader>
@@ -46,6 +61,7 @@ export default function Dashboard({
                     </Card>
                     <ReactionsCard reactionCounts={reactionCounts} />
                 </div>
+
             </div>
         </AppLayout>
     );
