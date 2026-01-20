@@ -21,6 +21,10 @@ return Application::configure(basePath: dirname(__DIR__))
             HandleInertiaRequests::class,
             AddLinkHeadersForPreloadedAssets::class,
         ]);
+
+        $middleware->alias([
+            'track.pageviews' => \App\Http\Middleware\TrackPageViews::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
